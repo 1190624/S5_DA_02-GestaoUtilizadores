@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:file:./UtilizadoresDB
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 470052381104-63iji9vr2i5o1ltsc45c0j2mfe1s29tk.apps.googleusercontent.com
+            client-secret: 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
+
+logging:
+  level:
+    org.springframework.security: DEBUG
