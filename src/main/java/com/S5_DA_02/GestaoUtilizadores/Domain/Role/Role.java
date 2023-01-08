@@ -1,6 +1,5 @@
 package com.S5_DA_02.GestaoUtilizadores.Domain.Role;
 
-
 import jakarta.persistence.*;
 
 @Entity
