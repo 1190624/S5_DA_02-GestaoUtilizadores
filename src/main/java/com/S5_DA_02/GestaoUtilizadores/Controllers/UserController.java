@@ -16,6 +16,13 @@ import java.util.Map;
 public class UserController {
     private final UserService userService;
 
+    @PostMapping("/api/auth/login")
+    public ResponseEntity<LoggedUserDTO> loginUser(@RequestBody LoginUserDTO loginUserDTO) {
+        LoggedUserDTO loggedUserDTO = userService.loginUser(loginUserDTO);
+
+        return loggedUserDTO != null ? ResponseEntity.ok().body(loggedUserDTO) : ResponseEntity.status(401).body(null);
+    }
+
     @PostMapping("/api/auth/register")
     public ResponseEntity<RegisteredUserDTO> registerUser(@RequestBody UserDTO userDTO) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/auth/register").toUriString());
