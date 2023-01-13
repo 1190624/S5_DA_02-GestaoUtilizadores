@@ -41,7 +41,7 @@ public class UserService implements IService<UserDTO> {
     public LoggedUserDTO loginUser(LoginUserDTO loginDTO) {
         User user = userRepo.getUserByEmail(loginDTO.getEmail());
 
-        if (user.getPassword().equals(loginDTO.getPassword()) && user.isAccountNonExpired())
+        if (user != null && user.getPassword().equals(loginDTO.getPassword()) && user.isAccountNonExpired())
             return new LoggedUserMapper().toDTO(user);
 
         return null;
