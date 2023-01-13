@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin(origins = "https://s5-da-02-spa.vercel.app/login")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
     private final UserService userService;
 
